@@ -1,5 +1,6 @@
 # Release Checklist
 
+- For the full next-app sequence, follow `md/next-app-upload-steps.md`.
 - Confirm Apple Developer capabilities for `com.daniao.jijiancalendar` and `com.daniao.jijiancalendar.widget`.
 - Create the iCloud container `iCloud.com.daniao.jijiancalendar`.
 - Confirm `fastlane/Fastfile` uses the App Store Connect API key path only, never the private key body.

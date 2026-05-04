@@ -1,0 +1,98 @@
+default_platform(:ios)
+
+require "shellwords"
+
+PROJECT_ROOT = File.expand_path("..", __dir__)
+APP_IDENTIFIER = "com.daniao.jijiancalendar"
+DEFAULT_ASC_API_KEY_ID = "JD5G4LG5XN"
+DEFAULT_ASC_API_ISSUER_ID = "f68594d0-23a9-480d-8f1d-6c84b40bf664"
+DEFAULT_ASC_API_KEYFILEPATH = "/Users/ll/Desktop/AuthKey_JD5G4LG5XN.p8"
+
+def asc_api_key_from_env
+  key_id = ENV.fetch("APP_STORE_CONNECT_API_KEY_ID", DEFAULT_ASC_API_KEY_ID)
+  issuer_id = ENV.fetch("APP_STORE_CONNECT_API_KEY_ISSUER_ID", DEFAULT_ASC_API_ISSUER_ID)
+  key_filepath = File.expand_path(ENV.fetch("APP_STORE_CONNECT_API_KEY_KEYFILEPATH", DEFAULT_ASC_API_KEYFILEPATH))
+  unless [key_id, issuer_id, key_filepath].all? { |value| value.to_s.strip.length.positive? } && File.exist?(key_filepath)
+    UI.user_error!("Missing App Store Connect API key config. Set APP_STORE_CONNECT_API_KEY_ID, APP_STORE_CONNECT_API_KEY_ISSUER_ID, APP_STORE_CONNECT_API_KEY_KEYFILEPATH or place #{DEFAULT_ASC_API_KEYFILEPATH}.")
+  end
+
+  app_store_connect_api_key(
+    key_id: key_id,
+    issuer_id: issuer_id,
+    key_filepath: key_filepath,
+    duration: 1200,
+    in_house: false
+  )
+end
+
+def app_review_information_from_env
+  required_keys = %w[
+    APP_REVIEW_FIRST_NAME
+    APP_REVIEW_LAST_NAME
+    APP_REVIEW_PHONE
+    APP_REVIEW_EMAIL
+  ]
+  return nil unless required_keys.all? { |key| ENV[key].to_s.strip.length.positive? }
+
+  {
+    first_name: ENV.fetch("APP_REVIEW_FIRST_NAME"),
+    last_name: ENV.fetch("APP_REVIEW_LAST_NAME"),
+    phone_number: ENV.fetch("APP_REVIEW_PHONE"),
+    email_address: ENV.fetch("APP_REVIEW_EMAIL"),
+    notes: ENV.fetch("APP_REVIEW_NOTES", "This app does not require login. No demo account is required.")
+  }
+end
+
+platform :ios do
+  desc "Validate localized App Store metadata exists for all launch locales"
+  lane :checkmeta do
+    sh("cd #{PROJECT_ROOT.shellescape} && node scripts/validate_metadata.mjs")
+  end
+
+  desc "Upload App Store metadata only"
+  lane :upmeta do
+    checkmeta
+    options = {
+      api_key: asc_api_key_from_env,
+      app_identifier: APP_IDENTIFIER,
+      metadata_path: File.join(PROJECT_ROOT, "fastlane/metadata"),
+      screenshots_path: File.join(PROJECT_ROOT, "fastlane/screenshots"),
+      skip_binary_upload: true,
+      skip_screenshots: true,
+      submit_for_review: false,
+      run_precheck_before_submit: false,
+      precheck_include_in_app_purchases: false,
+      force: true
+    }
+    review_information = app_review_information_from_env
+    options[:app_review_information] = review_information if review_information
+    deliver(options)
+  end
+
+  desc "Upload localized App Store screenshots only"
+  lane :uppic do
+    checkmeta
+    deliver(
+      api_key: asc_api_key_from_env,
+      app_identifier: APP_IDENTIFIER,
+      metadata_path: File.join(PROJECT_ROOT, "fastlane/metadata"),
+      screenshots_path: File.join(PROJECT_ROOT, "fastlane/screenshots"),
+      skip_binary_upload: true,
+      skip_metadata: true,
+      overwrite_screenshots: true,
+      submit_for_review: false,
+      run_precheck_before_submit: false,
+      precheck_include_in_app_purchases: false,
+      force: true
+    )
+  end
+
+  desc "Build an App Store Connect archive"
+  lane :build_release do
+    build_app(
+      scheme: "极简日历-倒数日-日程提醒与桌面小组件",
+      export_method: "app-store-connect",
+      xcargs: "CODE_SIGN_STYLE=Automatic"
+    )
+  end
+end

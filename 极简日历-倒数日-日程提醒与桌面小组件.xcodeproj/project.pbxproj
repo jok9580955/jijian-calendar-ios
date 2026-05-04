@@ -6,8 +6,41 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6A940B0E2FA7C500004AD061 /* JiJianCalendarWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6A940B002FA7C500004AD061 /* JiJianCalendarWidget.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6A940B172FA7C500004AD061 /* JiJianCalendarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A940B142FA7C500004AD061 /* JiJianCalendarWidget.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A940B122FA7C500004AD061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A9409F82FA7BBB1004AD061 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A940B082FA7C500004AD061;
+			remoteInfo = JiJianCalendarWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6A940B112FA7C500004AD061 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6A940B0E2FA7C500004AD061 /* JiJianCalendarWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6A940A002FA7BBB1004AD061 /* 极简日历-倒数日-日程提醒与桌面小组件.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "极简日历-倒数日-日程提醒与桌面小组件.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A940B002FA7C500004AD061 /* JiJianCalendarWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JiJianCalendarWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A940B142FA7C500004AD061 /* JiJianCalendarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiJianCalendarWidget.swift; sourceTree = "<group>"; };
+		6A940B152FA7C500004AD061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A940B162FA7C500004AD061 /* JiJianCalendarWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JiJianCalendarWidget.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +59,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6A940B062FA7C500004AD061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				6A940A022FA7BBB1004AD061 /* 极简日历-倒数日-日程提醒与桌面小组件 */,
+				6A940B012FA7C500004AD061 /* JiJianCalendarWidget */,
 				6A940A012FA7BBB1004AD061 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +82,19 @@
 			isa = PBXGroup;
 			children = (
 				6A940A002FA7BBB1004AD061 /* 极简日历-倒数日-日程提醒与桌面小组件.app */,
+				6A940B002FA7C500004AD061 /* JiJianCalendarWidget.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6A940B012FA7C500004AD061 /* JiJianCalendarWidget */ = {
+			isa = PBXGroup;
+			children = (
+				6A940B142FA7C500004AD061 /* JiJianCalendarWidget.swift */,
+				6A940B152FA7C500004AD061 /* Info.plist */,
+				6A940B162FA7C500004AD061 /* JiJianCalendarWidget.entitlements */,
+			);
+			path = JiJianCalendarWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +107,12 @@
 				6A9409FC2FA7BBB1004AD061 /* Sources */,
 				6A9409FD2FA7BBB1004AD061 /* Frameworks */,
 				6A9409FE2FA7BBB1004AD061 /* Resources */,
+				6A940B112FA7C500004AD061 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6A940B132FA7C500004AD061 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				6A940A022FA7BBB1004AD061 /* 极简日历-倒数日-日程提醒与桌面小组件 */,
@@ -69,6 +123,25 @@
 			productName = "极简日历-倒数日-日程提醒与桌面小组件";
 			productReference = 6A940A002FA7BBB1004AD061 /* 极简日历-倒数日-日程提醒与桌面小组件.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6A940B082FA7C500004AD061 /* JiJianCalendarWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A940B0B2FA7C500004AD061 /* Build configuration list for PBXNativeTarget "JiJianCalendarWidget" */;
+			buildPhases = (
+				6A940B052FA7C500004AD061 /* Sources */,
+				6A940B062FA7C500004AD061 /* Frameworks */,
+				6A940B072FA7C500004AD061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JiJianCalendarWidget;
+			packageProductDependencies = (
+			);
+			productName = JiJianCalendarWidget;
+			productReference = 6A940B002FA7C500004AD061 /* JiJianCalendarWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +156,9 @@
 					6A9409FF2FA7BBB1004AD061 = {
 						CreatedOnToolsVersion = 26.4.1;
 					};
+					6A940B082FA7C500004AD061 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 6A9409FB2FA7BBB1004AD061 /* Build configuration list for PBXProject "极简日历-倒数日-日程提醒与桌面小组件" */;
@@ -91,6 +167,45 @@
 			knownRegions = (
 				en,
 				Base,
+				"ar-SA",
+				ca,
+				"zh-Hans",
+				"zh-Hant",
+				hr,
+				cs,
+				da,
+				"nl-NL",
+				"en-AU",
+				"en-CA",
+				"en-GB",
+				"en-US",
+				fi,
+				"fr-CA",
+				"fr-FR",
+				"de-DE",
+				el,
+				he,
+				hi,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				no,
+				pl,
+				"pt-BR",
+				"pt-PT",
+				ro,
+				ru,
+				sk,
+				"es-MX",
+				"es-ES",
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
 			);
 			mainGroup = 6A9409F72FA7BBB1004AD061;
 			minimizedProjectReferenceProxies = 1;
@@ -100,12 +215,20 @@
 			projectRoot = "";
 			targets = (
 				6A9409FF2FA7BBB1004AD061 /* 极简日历-倒数日-日程提醒与桌面小组件 */,
+				6A940B082FA7C500004AD061 /* JiJianCalendarWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6A9409FE2FA7BBB1004AD061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A940B072FA7C500004AD061 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +245,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6A940B052FA7C500004AD061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A940B172FA7C500004AD061 /* JiJianCalendarWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A940B132FA7C500004AD061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A940B082FA7C500004AD061 /* JiJianCalendarWidget */;
+			targetProxy = 6A940B122FA7C500004AD061 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6A940A092FA7BBB3004AD061 /* Debug */ = {
@@ -246,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "极简日历-倒数日-日程提醒与桌面小组件/极简日历.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QFZ87PFLK4;
@@ -254,6 +394,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "极简日历-倒数日-日程提醒与桌面小组件";
+				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "极简日历需要读取系统日历，以便导入和同步您的日程。";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "极简日历需要读取系统日历，以便导入和同步您的日程。";
+				INFOPLIST_KEY_NSCalendarsWriteOnlyAccessUsageDescription = "极简日历需要写入系统日历，以便把您选择的日程同步回 Apple 日历。";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -264,23 +408,23 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "daniaogewoddaniao--ji3.-------------------";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniao.jijiancalendar;
+				PRODUCT_NAME = "极简日历-倒数日-日程提醒与桌面小组件";
 				REGISTER_APP_GROUPS = YES;
-				SDKROOT = auto;
+				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 26.4;
 			};
 			name = Debug;
@@ -290,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "极简日历-倒数日-日程提醒与桌面小组件/极简日历.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QFZ87PFLK4;
@@ -298,6 +443,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "极简日历-倒数日-日程提醒与桌面小组件";
+				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "极简日历需要读取系统日历，以便导入和同步您的日程。";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "极简日历需要读取系统日历，以便导入和同步您的日程。";
+				INFOPLIST_KEY_NSCalendarsWriteOnlyAccessUsageDescription = "极简日历需要写入系统日历，以便把您选择的日程同步回 Apple 日历。";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -308,24 +457,78 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "daniaogewoddaniao--ji3.-------------------";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniao.jijiancalendar;
+				PRODUCT_NAME = "极简日历-倒数日-日程提醒与桌面小组件";
 				REGISTER_APP_GROUPS = YES;
-				SDKROOT = auto;
+				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 26.4;
+			};
+			name = Release;
+		};
+		6A940B092FA7C500004AD061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = JiJianCalendarWidget/JiJianCalendarWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QFZ87PFLK4;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = JiJianCalendarWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniao.jijiancalendar.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A940B0A2FA7C500004AD061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = JiJianCalendarWidget/JiJianCalendarWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QFZ87PFLK4;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = JiJianCalendarWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniao.jijiancalendar.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -346,6 +549,15 @@
 			buildConfigurations = (
 				6A940A0C2FA7BBB3004AD061 /* Debug */,
 				6A940A0D2FA7BBB3004AD061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A940B0B2FA7C500004AD061 /* Build configuration list for PBXNativeTarget "JiJianCalendarWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A940B092FA7C500004AD061 /* Debug */,
+				6A940B0A2FA7C500004AD061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

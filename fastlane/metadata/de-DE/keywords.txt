@@ -1,0 +1,1 @@
+kalender,countdown,termine,erinnerung,geburtstag,jahrestag,widget,feiertage

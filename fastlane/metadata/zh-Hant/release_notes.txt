@@ -1,0 +1,1 @@
+首個全球版本，包含日曆、倒數日、提醒、節日、iCloud 同步和小工具。 (Traditional Chinese)

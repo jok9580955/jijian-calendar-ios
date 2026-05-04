@@ -1,0 +1,1 @@
+Initial global release with calendar, countdowns, reminders, holiday data, iCloud sync and widgets. (Arabic)

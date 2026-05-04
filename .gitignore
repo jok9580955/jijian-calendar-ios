@@ -1,0 +1,8 @@
+.build/
+DerivedData/
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots.html
+*.xcresult
+*.ipa
+*.dSYM.zip
